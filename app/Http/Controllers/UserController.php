@@ -14,7 +14,11 @@ class UserController extends Controller
     }
 
     public function getUserByID($id) {
-        return $this->appRepository->getUserByID($id);
+        $user = $this->appRepository->getUserByID($id);
+        if (isset($user->id)) {
+            return view('result.main')->with(['user' => $user]);
+        }
+        return $user;
     }
 
     public function appendUserComments(Request $request) {

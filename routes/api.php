@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/get-user-by-id/{id}', 'UserController@getUserByID');
+Route::post('/append-user-comments', 'UserController@appendUserComments');

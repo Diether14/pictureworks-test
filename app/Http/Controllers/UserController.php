@@ -16,4 +16,12 @@ class UserController extends Controller
     public function getUserByID($id) {
         return $this->appRepository->getUserByID($id);
     }
+
+    public function appendUserComments(Request $request) {
+        if($request->isJson()) {
+            return $this->appRepository->appendUserComments($request->all());
+        } else {
+            return response('Invalid POST JSON', 422);
+        }
+    }
 }

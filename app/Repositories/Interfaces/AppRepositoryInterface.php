@@ -5,5 +5,5 @@ namespace App\Repositories\Interfaces;
 use App\User;
 
 interface AppRepositoryInterface {
-    public function getUserByID(number $id);
+    public function getUserByID($id);
 }
